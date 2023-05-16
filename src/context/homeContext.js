@@ -1,8 +1,8 @@
 import { useState, createContext, useEffect } from "react";
 
-export const AuthContext = createContext();
+export const HomeContext = createContext();
 
-export const AuthProvider = ({children}) => {
+export const HomeProvider = ({children}) => {
   const localData = JSON.parse(localStorage.getItem('token'));
   const [token, setToken] = useState(localData || '');
 
@@ -15,8 +15,8 @@ export const AuthProvider = ({children}) => {
   }, [token]);
 
   return (
-    <AuthContext.Provider value={{token, setToken}}>
+    <HomeContext.Provider value={{token, setToken}}>
       {children}
-    </AuthContext.Provider>
+    </HomeContext.Provider>
   );
 };

@@ -1,19 +1,18 @@
-.register {
+.signIn {
   display: block;
   width: 100%;
   height: 100%;
   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.register-inner {
+.signIn-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
-.register-imgDiv {
+.signIn-imgDiv {
   display: block;
   width: 50%;
   height: 100%;
@@ -22,13 +21,13 @@
   background-color:  rgba(201, 172, 140, 0.93);
 }
 
-.register-form {
+.signIn-form {
   display: block;
   height: 100%;
   padding: 75px 136px 136px 112px;
 }
 
-.register-heading {
+.signIn-heading {
   font-family: 'Arial Black';
   font-style: normal;
   margin: 0;
@@ -38,7 +37,7 @@
   line-height: 51px;
 }
 
-.register-text {
+.signIn-text {
   font-family: 'Roboto';
   font-style: normal;
   margin: 0;
@@ -48,7 +47,7 @@
   line-height: 15px;
 }
 
-.register-input {
+.signIn-input {
   display: block;
   font-family: 'Roboto';
   font-style: normal;
@@ -64,7 +63,7 @@
   color: #AAAAAA;
 }
 
-.register-button {
+.signIn-button {
   width: 330px;
   font-family: 'Red Hat Display';
   font-style: normal;
@@ -78,15 +77,15 @@
   cursor: pointer;
 }
 
-.register-button:hover {
+.signIn-button:hover {
   background-color: #304568;
 }
 
-.register-button:active {
+.signIn-button:active {
   background-color: #556c93;
 }
 
-.register-link {
+.signIn-link {
   text-decoration: none;
   color: #549FF9;
 }

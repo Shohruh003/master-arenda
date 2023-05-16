@@ -1,27 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import { About } from "./Pages/About/About";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import { Home } from "./Pages/Home/Home";
-import { Catalog } from "./Pages/Catalog/Catalog";
-import { Condition } from "./Pages/Condition/Condition";
-import { Contact } from "./Pages/Contact/Contact";
-
+import { Private } from "./Private";
+import { Public } from "./Public";
+import { UseAuth } from "./Hooks/UseAuth";
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <Routes>
-        <Route path="/*" element={<Home/>}/>
-        <Route path="/about/*" element={<About/>}/>
-        <Route path="/catalog/*" element={<Catalog/>}/>
-        <Route path="/condition/*" element={<Condition/>}/>
-        <Route path="/contact/*" element={<Contact/>}/>
-      </Routes>
-      <Footer/>
-    </div>
-  );
+  const {token} = UseAuth();
+
+  if (!token) {
+    return <Private/>
+  }
+  return <Public/>
 }
 
 export default App;

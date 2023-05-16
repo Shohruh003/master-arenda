@@ -5,6 +5,7 @@ import Email from '../../Images/email.png'
 import Whatsapp from '../../Images/whatsapp.png'
 import Phone from '../../Images/phone.png'
 import { ReactLocation, Router } from 'react-location'
+import { Home } from '../Home/Home'
 const reactLocation = new ReactLocation()
 
 
@@ -38,6 +39,7 @@ export const Contact = () => {
       routes={[
          {
             path: 'https://www.google.com/search?q=%D0%B3%D0%BE%D1%80%D0%BE%D0%B4+%D0%B0%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%8C%D1%81%D0%BA&oq=%D0%93%D0%BE%D1%80%D0%BE%D0%B4+%D0%90%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%8C%D1%81%D0%BA&aqs=chrome.0.0i19i355i512j46i19i512j0i19i512l8.891j0j7&sourceid=chrome&ie=UTF-8#',
+            element: <Home/>
             
          },
       ]}

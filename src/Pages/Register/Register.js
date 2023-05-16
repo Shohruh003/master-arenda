@@ -1,14 +1,11 @@
 import React, {useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+import { HomeContext } from "../../context/homeContext";
 import axios from "axios";
-import SignUp from '../../Images/sign-up.png';
 import './register.css'
-import { ThemeContext } from "../../context/ThemeContext";
 
 export const Register = () => {
-  const {theme} = useContext(ThemeContext)
-  const { setToken } = useContext(AuthContext);
+  const { setToken } = useContext(HomeContext);
   const navigate = useNavigate();
   
   const handleUserRegister = (evt) => {
@@ -34,12 +31,9 @@ export const Register = () => {
   };
 
   return (
-    <div className={`register ${theme}`}>
+    <div className={`register`}>
       <div className="container">
         <div className="register-inner">
-          <div className="register-imgDiv">
-            <img className="register-img" src={SignUp} alt="img" />
-          </div>
           
           <form className="register-form" onSubmit={handleUserRegister}>
           <h2 className="register-heading">Sign up</h2>
