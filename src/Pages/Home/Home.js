@@ -26,8 +26,6 @@ export const Home = () => {
               navigation
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
             >
               <SwiperSlide className="Generator">
                 <img className="generatorSlide" src={Generator} alt="generator" />
