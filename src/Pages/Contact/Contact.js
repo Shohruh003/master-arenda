@@ -5,7 +5,6 @@ import Email from '../../Images/email.png'
 import Whatsapp from '../../Images/whatsapp.png'
 import Phone from '../../Images/phone.png'
 import { ReactLocation, Router } from 'react-location'
-import { Home } from '../Home/Home'
 const reactLocation = new ReactLocation()
 
 
@@ -34,16 +33,7 @@ export const Contact = () => {
             </li> 
           </ul>
 
-          <Router
-      location={reactLocation}
-      routes={[
-         {
-            path: 'https://www.google.com/search?q=%D0%B3%D0%BE%D1%80%D0%BE%D0%B4+%D0%B0%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%8C%D1%81%D0%BA&oq=%D0%93%D0%BE%D1%80%D0%BE%D0%B4+%D0%90%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%8C%D1%81%D0%BA&aqs=chrome.0.0i19i355i512j46i19i512j0i19i512l8.891j0j7&sourceid=chrome&ie=UTF-8#',
-            element: <Home/>
-            
-         },
-      ]}
-   />
+          <iframe className='location' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219368.78437550738!2d40.22567494251899!3d64.56111913559089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x441833f755c232e1%3A0x403eec437ac89a31!2sArkhangelsk%2C%20Arkhangelsk%20Oblast%2C%20Russia!5e0!3m2!1sen!2s!4v1684237370892!5m2!1sen!2s" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </div>
       </div>

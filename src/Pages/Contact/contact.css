@@ -16,3 +16,9 @@
   display: block;
   margin-bottom: 20px ;
 }
+
+.location{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 0;
+}
