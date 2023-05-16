@@ -1,0 +1,104 @@
+.header {
+  padding: 10px 0 5px 0;
+  box-shadow: 0px 0px 5px 0px;
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+}
+
+.address-link {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.address-link:hover {
+  color: rgb(89, 94, 92);
+  text-decoration: underline;
+}
+
+.networkList{
+  list-style-type: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.email-link, .whatsapp-link{
+  text-decoration: none;
+}
+
+.networkList li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  color: rgb(89, 94, 92);
+}
+
+.whatsapp-link:hover {
+  color: rgb(89, 94, 92);
+}
+
+.phone-link:hover {
+  text-decoration: none;
+  color: rgb(89, 94, 92);
+}
+
+.networkList img {
+  margin-right: 7px;
+}
+
+.nav-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.searchDiv {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+  margin-right: 20px;
+  background-color: white;
+}
+
+.search-input{
+  font-size: 18px;
+  border: none;
+}
+
+.header-link {
+  display: block;
+  font-size: 18px;
+  padding: 15px 25px;
+  margin: 0 2px;
+  text-decoration: none;
+  color: white;
+}
+
+.header-link:hover {
+  background-color: rgb(86, 84, 84);
+}
+
+.header-active {
+  background-color: rgb(86, 84, 84);
+}

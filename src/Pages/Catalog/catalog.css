@@ -1,0 +1,9 @@
+.catalogList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 100px 0 20px 0;
+}
