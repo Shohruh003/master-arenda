@@ -72,7 +72,7 @@ export const Home = () => {
             
             <ul className="homeList">
                 {card?.data?.categorys?.map((e) => (
-                <Card key={e?.id} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
+                <Card key={e?.name} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
               ))
 }   
                 <Card/> 
