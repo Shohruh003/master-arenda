@@ -1,6 +1,7 @@
 .cardItem {
   width: 250px;
-  /* padding: 30px 30px 20px 30px; */
+  height: 300px;
+  padding: 0 20px;
   margin-bottom: 20px;
   border: 1px solid black;
 }
@@ -8,6 +9,7 @@
 .cardDiv {
   transform: translateY(0%);
   display: none;
+  margin-left: -21px;
 }
 .cardItem:hover{
   border-bottom: none;
@@ -24,6 +26,7 @@
 }
 
 .cardItem h3 {
+  font-size: 20px;
   margin: 5px 0 15px 0;
   text-align: center;
 }

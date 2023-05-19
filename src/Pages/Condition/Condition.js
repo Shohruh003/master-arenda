@@ -6,7 +6,7 @@ export const Condition = () => {
 
   return(
     <div className="condition">
-      <div className="container">
+      <div className="containers">
         <div className="condition-inner">
           <h2>Условия аренды спецтехники</h2>
           

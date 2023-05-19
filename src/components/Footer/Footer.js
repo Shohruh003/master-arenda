@@ -30,7 +30,7 @@ export const Footer = () => {
                   <Link className='footer-link' to='/basket'>Корзинка</Link>
                 </li>
             </ul>
-      <div className="container">
+      <div className="containers">
         <div className="footer-inner">
             <div className='footer-logo'>
               <p>© 2023 Мастераренда</p>

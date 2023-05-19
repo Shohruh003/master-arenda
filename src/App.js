@@ -1,14 +1,9 @@
 import { Private } from "./Private";
-import { Public } from "./Public";
-import { UseAuth } from "./Hooks/UseAuth";
+// import { Admin } from "./Pages/Admin/Admin";
 
 function App() {
-  const {token} = UseAuth();
+  return <Private/>
 
-  if (!token) {
-    return <Private/>
-  }
-  return <Public/>
 }
 
 export default App;

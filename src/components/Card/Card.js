@@ -1,24 +1,45 @@
 
 import CardImg from '../../Images/52216253.jpg'
 import './card.css'
-export const Card = () => {
+import { useState } from 'react'
+import { Modal } from '../Modal/Modal'
+import { TrueModal } from '../Modal/TrueModal'
+import { Public } from '../../Public'
+import { UseAuth } from '../../Hooks/UseAuth'
 
+export const Card = ({item, price, character, image}) => {
+  const { token } = UseAuth()
+  console.log(`http://165.227.142.114:8000/${image}`);
+
+  const [modal, setModal] = useState(false);
+  const [trueModal, setTrueModal] = useState(false);
 
   return(
     <li className='cardItem'>
-      <img src={CardImg} alt="card-img" width='200' height='200' />
-      <h3>Аккумуляторные дрели-шуруповерты</h3>
+      <img src={CardImg} 
+          onError={({ currentTarget }) => {
+          currentTarget.onerror = null;
+          currentTarget.src ={CardImg}
+            }}  alt="card-img" width='200' height='200' />
+      <h3>{item ? item : "Аккумуляторные дрели-шуруповерты"}</h3>
       <div className='cardDiv'>
-      <p>Название: <span>Bosch GSR 180-LI 2х2А*ч 0.601.9F8.123</span></p>
-      <p>Цена аренда за сутки: <span>500 ₽</span></p>
-      <p>Технические характеристики: </p>
-      <p>Тип: <span>аккумуляторный</span></p>
-      <p>Тип двигателя: <span>щеточный</span></p>
-      <p>Наличие реверса: <span>да</span></p>
-      <p>Наличие подсветки: <span>да</span></p>
+      <p>Цена аренда за сутки: <span>{price ? price : "700$"}</span></p>
+      <p>Технические характеристики: {character ? character : "Тип:аккумуляторный\nТип двигателя:щеточный\nНаличие реверса:да\nНаличие подсветки:да"}</p>
 
-      <button className='cardBtn'>в корзину</button>
+      <button className='cardBtn' onClick={() => {
+        if(token) {
+          return setModal(true)
+        }
+        return setTrueModal(true)
+      }}>в корзину</button>
       </div>
+
+      <Modal modal={modal} setModal={setModal}>
+        <Public/>
+      </Modal>
+
+      <TrueModal trueModal={trueModal} setTrueModal={setTrueModal} />
+      
     </li>
   )
 }

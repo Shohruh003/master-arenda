@@ -12,7 +12,7 @@ export const Header = () => {
   return (
     <div>
       <div className="header">
-      <div className="container">
+      <div className="containers">
         <div className="header-inner">
           <Link className='logo-link' to='#'><img className='logo' src={Logo} alt="site-logo" width='70' height='10'/></Link>
           
@@ -35,7 +35,7 @@ export const Header = () => {
       </div>
     </div>
 
-    <div className='container'>
+    <div className='containers'>
     <div className='nav-div'>
     <nav>
         <ul className='header-list'>

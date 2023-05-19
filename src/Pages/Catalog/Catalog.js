@@ -1,20 +1,35 @@
+import { useEffect, useState } from "react";
 import { Card } from "../../components/Card/Card"
 import './catalog.css'
+import axios from "axios";
 
 
 
 export const Catalog = () => {
 
+  const [catalog, setCatalog] = useState([]);
+  
+  useEffect(() => {
+    axios
+    .get('http://165.227.142.114:8000/api/category/all')
+    .then(function (response) {
+      setCatalog(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    }); 
+  }, [catalog])
+
 
   return(
     <div className="catalog">
-      <div className="container">
+      <div className="containers">
         <div className="catalog-inner">
           <ul className="catalogList">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+          { catalog?.data?.categorys?.map((e) => (
+                <Card key={e?.id} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
+              ))
+}   
             <Card/>
             <Card/>
             <Card/>

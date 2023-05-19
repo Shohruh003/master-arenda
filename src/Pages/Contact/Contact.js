@@ -13,7 +13,7 @@ export const Contact = () => {
 
   return(
     <div className="contact">
-      <div className="container">
+      <div className="containers">
         <div className="contact-inner">
           <h2>Контактная информация</h2>
 
