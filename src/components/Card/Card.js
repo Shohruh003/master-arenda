@@ -9,7 +9,6 @@ import { UseAuth } from '../../Hooks/UseAuth'
 
 export const Card = ({item, price, character, image}) => {
   const { token } = UseAuth()
-  console.log(`http://165.227.142.114:8000/${image}`);
 
   const [modal, setModal] = useState(false);
   const [trueModal, setTrueModal] = useState(false);
@@ -27,7 +26,7 @@ export const Card = ({item, price, character, image}) => {
       <p>Технические характеристики: {character ? character : "Тип:аккумуляторный\nТип двигателя:щеточный\nНаличие реверса:да\nНаличие подсветки:да"}</p>
 
       <button className='cardBtn' onClick={() => {
-        if(token) {
+        if(!token) {
           return setModal(true)
         }
         return setTrueModal(true)
