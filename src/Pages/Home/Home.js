@@ -76,11 +76,7 @@ export const Home = () => {
                 {card?.data?.categorys?.map((e) => (
                 <Card key={e?.name} id={e?._id} name={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
               ))
-}   
-                <Card/> 
-                <Card/> 
-                <Card/> 
-                <Card/> 
+} 
             </ul>
 
             <div className="service">
