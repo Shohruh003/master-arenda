@@ -1,7 +1,12 @@
+import { UseAdmin } from "./Hooks/UsAdmin";
+import { Admin } from "./Pages/Admin/Admin";
 import { Private } from "./Private";
-// import { Admin } from "./Pages/Admin/Admin";
 
 function App() {
+  const {adToken} = UseAdmin()
+  if (adToken?.data?.admin) {
+    return <Admin/>
+  }
   return <Private/>
 
 }

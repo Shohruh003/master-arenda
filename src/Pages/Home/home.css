@@ -31,6 +31,7 @@
 
 .serviceItem{
   width: 300px;
+  height: 200px;
   text-align: center;
   padding: 25px 15px;
   background-color: aliceblue;
@@ -54,6 +55,9 @@
   margin: 0;
 }
 
+.serviceItem img {
+  border-radius: 50%;
+}
 .hero {
   position: relative;
 }

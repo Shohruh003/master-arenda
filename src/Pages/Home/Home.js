@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 import './home.css'
 import { Card } from "../../components/Card/Card"
-import Icon from '../../Images/62550852.jpg'
+import ProfilIcon from '../../Images/frofilIcon.png'
+import DastavkaIcon from '../../Images/dastavkaIcon.png'
+import TipsIcon from '../../Images/tipsIcon.jpeg'
 import Generator from "../../Images/GeneratorOrg.jpg";
 import Kompressor from "../../Images/Kompressor.jpg";
 import Perefrator from "../../Images/peref.jpg";
@@ -20,7 +22,7 @@ export const Home = () => {
   
   useEffect(() => {
     axios
-    .get('http://165.227.142.114:8000/api/category/all')
+    .get('https://pro.zirapcha.uz/api/category/all')
     .then(function (response) {
       setCard(response.data)
     })
@@ -72,7 +74,7 @@ export const Home = () => {
             
             <ul className="homeList">
                 {card?.data?.categorys?.map((e) => (
-                <Card key={e?.name} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
+                <Card key={e?.name} id={e?._id} name={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
               ))
 }   
                 <Card/> 
@@ -85,19 +87,19 @@ export const Home = () => {
                 <h2 className="service-heading">НАШИ УСЛУГИ</h2>
                 <ul className="serviceList">
                     <li className="serviceItem">
-                        <img src={Icon} alt="Icon-img" width='60' height='60' />
+                        <img src={TipsIcon} alt="Icon-img" width='60' height='60' />
                         <h3><Link className="serviceLink" to=''>КОНСУЛЬТАЦИИ</Link></h3>
                         <p>Не знаете что выбрать? Поможем!</p>
                     </li>
 
                     <li className="serviceItem">
-                        <img src={Icon} alt="Icon-img" width='60' height='60' />
+                        <img src={ProfilIcon} alt="Icon-img" width='60' height='60' />
                         <h3><Link className="serviceLink" to=''>ГАРАНТИЙНОЕ ОБСЛУЖИВАНИЕ</Link></h3>
                         <p>Большой ассортимент запчастей</p>
                     </li>
 
                     <li className="serviceItem">
-                        <img src={Icon} alt="Icon-img" width='60' height='60' />
+                        <img src={DastavkaIcon} alt="Icon-img" width='60' height='60' />
                         <h3><Link className="serviceLink" to=''>ДОСТАВКА</Link></h3>
                         <p>Осуществляем доставку оборудования</p>
                     </li>

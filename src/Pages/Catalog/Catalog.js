@@ -11,7 +11,7 @@ export const Catalog = () => {
   
   useEffect(() => {
     axios
-    .get('http://165.227.142.114:8000/api/category/all')
+    .get('https://pro.zirapcha.uz/api/category/all')
     .then(function (response) {
       setCatalog(response.data)
     })
@@ -27,7 +27,7 @@ export const Catalog = () => {
         <div className="catalog-inner">
           <ul className="catalogList">
           { catalog?.data?.categorys?.map((e) => (
-                <Card key={e?.id} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
+                <Card key={e?.name} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
               ))
 }   
             <Card/>

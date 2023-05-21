@@ -20,7 +20,7 @@ export const Private = () => {
           <Route path="/catalog/*" element={<Catalog/>}/>
           <Route path="/condition/*" element={<Condition/>}/>
           <Route path="/contact/*" element={<Contact/>}/>
-          <Route path="/basket/*" element={<Basket/>}/>
+          <Route path={"/basket/:id/*"} element={<Basket/>}/>
         </Routes>
         <Footer/>
     </div>

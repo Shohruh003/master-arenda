@@ -27,7 +27,7 @@ export const Footer = () => {
                 </li>
 
                 <li>
-                  <Link className='footer-link' to='/basket'>Корзинка</Link>
+                  <Link className='footer-link' to='/basket/id'>Корзинка</Link>
                 </li>
             </ul>
       <div className="containers">

@@ -1,10 +1,8 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import './admin.css'
 import { AddCategory } from './AddCategory/AddCategory'
 import { Users } from './Users/Users'
 import { Orders } from './Orders/Orders'
-
-
 
 export const Admin = () => {
 
@@ -14,15 +12,15 @@ export const Admin = () => {
         <div className="containers">
           <ul className='admin-list'>
                 <li>
-                  <Link className='admin-link' to='/'>Пользователь</Link>
+                  <NavLink className={({isActive}) => (isActive ? 'header-active admin-link' : 'admin-link')} to='/'>Пользователь</NavLink>
                 </li>
 
                 <li>
-                  <Link className='admin-link' to='/category'>Добавить категорию</Link>
+                  <NavLink className={({isActive}) => (isActive ? 'header-active admin-link' : 'admin-link')} to='/category'>Добавить категорию</NavLink>
                 </li>
 
                 <li>
-                  <Link className='admin-link' to='/order'>Заказы</Link>
+                  <NavLink className={({isActive}) => (isActive ? 'header-active admin-link' : 'admin-link')} to='/order'>Заказы</NavLink>
                 </li>
             </ul>
         </div>

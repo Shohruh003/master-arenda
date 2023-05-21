@@ -105,3 +105,27 @@
 .header-active {
   background-color: rgb(86, 84, 84);
 }
+
+.header-btn{
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+}
+
+.header-frofil{
+  display: none;
+}
+
+.header-navigate {
+  position: absolute;
+  z-index: 4;
+  top: 100px;
+  left: 930px;
+  padding: 5px 10px;
+}
+
+.set {
+  text-decoration: none;
+  display: block;
+  color: black;
+}

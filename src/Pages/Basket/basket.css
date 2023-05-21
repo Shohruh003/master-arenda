@@ -1,0 +1,23 @@
+.basket-inner {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  padding-bottom: 50px;
+}
+
+.rentDiv {
+  width: 400px;
+}
+
+.rentDiv h3 {
+  font-size: 24px;
+}
+
+.rentDiv p, label {
+  font-weight: bold;
+}
+
+.rentDiv span {
+  font-weight: 400;
+}
+

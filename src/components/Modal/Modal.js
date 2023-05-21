@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import "./modal.scss";
+import { Public } from "../../Public";
 
-export const Modal = ({modal , setModal, children}) => {
+export const Modal = ({modal , setModal}) => {
 
   const elOverlay = useRef();
   const closeModal = (evt) => {
@@ -33,7 +34,9 @@ export const Modal = ({modal , setModal, children}) => {
       <div className="modal-main w-50 bg-white p-4">
 
           <button onClick={() => setModal(false)} className="btn btn-danger exit">&times;</button>
-        <div className="modal-content">{children}</div>
+        <div className="modal-content">
+          <Public/>
+        </div>
       </div>
     </div>
   )

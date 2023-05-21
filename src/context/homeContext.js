@@ -9,9 +9,7 @@ export const HomeProvider = ({children}) => {
   useEffect(() => {
     if(token) {
       localStorage.setItem('token', JSON.stringify(token));
-    } else {
-      localStorage.removeItem('token');
-    }
+    } 
   }, [token]);
 
   return (

@@ -1,34 +1,33 @@
-.addCategory {
+.signIn {
   display: block;
   width: 100%;
   height: 100%;
   background-color: white;
 }
 
-.addCategory-inner {
+.signIn-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   
 }
 
-.addCategory-imgDiv {
+.signIn-imgDiv {
   display: block;
   width: 50%;
   height: 100%;
-  padding: 87px 38px 34px 38px;
+  padding: 122px 38px;
   text-align: center;
-  background-color:  #E5E5E5;
+  background-color:  rgba(201, 172, 140, 0.93);
 }
 
-.addCategory-form {
+.signIn-form {
   display: block;
-  width: 50%;
   height: 100%;
-  padding: 31px 136px 10px 112px;
+  padding: 75px 136px 136px 112px;
 }
 
-.addCategory-heading {
+.signIn-heading {
   font-family: 'Arial Black';
   font-style: normal;
   margin: 0;
@@ -38,7 +37,17 @@
   line-height: 51px;
 }
 
-.addCategory-input {
+.signIn-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  margin: 0;
+  margin-bottom: 21px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.signIn-input {
   display: block;
   font-family: 'Roboto';
   font-style: normal;
@@ -54,7 +63,7 @@
   color: #AAAAAA;
 }
 
-.addCategory-button {
+.signIn-button {
   width: 330px;
   font-family: 'Red Hat Display';
   font-style: normal;
@@ -68,46 +77,15 @@
   cursor: pointer;
 }
 
-.addCategory-button:hover {
-  background-color: #2f4263;
+.signIn-button:hover {
+  background-color: #304568;
 }
 
-.addCategory-button:active {
-  background-color: #4f6387;
+.signIn-button:active {
+  background-color: #556c93;
 }
 
-.addCategory-link {
+.signIn-link {
   text-decoration: none;
   color: #549FF9;
-}
-
-.addCategory-label {
-  font-family: 'Red Hat Display';
-  display: block;
-  font-style: normal;
-  margin-top: 23px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 36px;
-}
-
-.addCategory-img {
-  margin-left: 30px;
-}
-
-.addCategory-contentImg {
-  width: 300px;
-  height: 482px;
-}
-
-.addCategory-name {
-  font-family: 'Arial Black';
-  font-style: normal;
-  margin: 0;
-  margin-top: 22px;
-  margin-bottom: 20px;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 34px;
-  color: #000000;
 }

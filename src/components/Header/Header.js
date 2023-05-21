@@ -5,9 +5,13 @@ import Email from '../../Images/email.png'
 import Whatsapp from '../../Images/whatsapp.png'
 import Phone from '../../Images/phone.png'
 import SearchIcon from '../../Images/search.png'
+import ProfilImg from '../../Images/profil.png'
 import './header.css'
+import { useContext, useState } from 'react';
+import { HomeContext } from '../../context/homeContext';
 export const Header = () => {
-
+  const { token } = useContext(HomeContext)
+  const [btn, setBtn] = useState()
 
   return (
     <div>
@@ -31,6 +35,16 @@ export const Header = () => {
               <Link className='phone-link' to=''> <img src={Phone} alt="phone-icon" width='25' height='25' />(8182) 47-345-6</Link>
             </li>
           </ul>
+
+          <button onClick={()=>{
+                setBtn(!btn);
+                }} className={token ? "header-btn" : "header-frofil"}>
+            <img className="header-img" alt="image" width={50} height={50} src={ProfilImg} />
+          </button>
+
+          <dialog open={btn} className="header-navigate">
+            <Link className="navSet set" to="">{token?.data?.user?.name}</Link>       
+          </dialog>
         </div>
       </div>
     </div>
@@ -60,7 +74,7 @@ export const Header = () => {
           </li>
 
           <li>
-            <NavLink className={({isActive}) => (isActive ? 'header-active header-link' : 'header-link')} to='/basket'>Корзинка</NavLink>
+            <NavLink className={({isActive}) => (isActive ? 'header-active header-link' : 'header-link')} to='/basket/id'>Корзинка</NavLink>
           </li>
         </ul>
     </nav>
