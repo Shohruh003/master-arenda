@@ -19,7 +19,6 @@ export const Orders = () => {
     })
     .then(function (response) {
       setOrder(response.data.data.orders)
-      console.log(response.data.data.orders);
     })
     .catch(function (error) {
       console.log(error);
@@ -45,9 +44,11 @@ export const Orders = () => {
                 <tbody key={e._id}>
                 <tr>
                   <th scope="row">{}</th>
-                  <td>{e.category.name}</td>
-                  <td>{e.number}</td>
-                  <td>{e.cost}</td>
+                  <td>{e?.category?.name}</td>
+                  <td>{e?.number}</td>
+                  <td>{e?.cost}</td>
+                  <td>{e?.creator?.phone_number}</td>
+                  <td>{e?.creator?.gmail}</td>
                 </tr>
               </tbody>
               ))

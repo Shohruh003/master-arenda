@@ -11,7 +11,6 @@ export const AddCategory = () => {
   const [ names, setNames ] = useState('')
   const [ prices, setPrices ] = useState('')
   const [ charak, setCharak ] = useState('')
-  const [ foto, setFoto ] = useState('')
   const {adToken, setAdToken} = UseAdmin()
   const navigate = useNavigate();
   
@@ -48,7 +47,7 @@ console.log({data});
           <div className="addCategory-imgDiv">
               <img className="addCategory-contentImg" src={Img} alt="book" width={350} height={266} />
               <label className="addCategory-label">Add Category image
-                <input className="addCategory-button" type="file" name="images" placeholder="Category image" required value={foto} onChange={(e) => setFoto(e.target.value)}/>
+                <input className="addCategory-button" type="file" name="images" placeholder="Category image" required/>
               </label>
           </div>
           

@@ -18,7 +18,6 @@ export const Users = () => {
     })
     .then(function (response) {
       setUser(response.data.data.users)
-      console.log(response.data.data.users);
     })
     .catch(function (error) {
       console.log(error);

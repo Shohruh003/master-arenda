@@ -39,7 +39,7 @@ export const Header = () => {
           <button onClick={()=>{
                 setBtn(!btn);
                 }} className={token ? "header-btn" : "header-frofil"}>
-            <img className="header-img" alt="image" width={50} height={50} src={ProfilImg} />
+            <img className="header-img" alt="profil" width={50} height={50} src={ProfilImg} />
           </button>
 
           <dialog open={btn} className="header-navigate">

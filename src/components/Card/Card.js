@@ -8,7 +8,7 @@ export const Card = ({id, name, price, character, image}) => {
 
   return(
     <li className='cardItem'>
-      <img src={CardImg} 
+      <img src={`https://pro.zirapcha.uz/api/api/file/${image}`} 
           onError={({ currentTarget }) => {
           currentTarget.onerror = null;
           currentTarget.src ={CardImg}
