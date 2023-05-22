@@ -29,8 +29,8 @@ export const AdminLogin = () => {
 
   return (      
           <form className="signIn-form" onSubmit={handleAdminLogin}>
-            <h1 className="signIn-heading">Sign in</h1>
-            <p className="signIn-text mb-3">Are you an user? <Link className="signIn-link" to='/'>For user</Link></p>
+            <h1 className="signIn-heading">Войти</h1>
+            <p className="signIn-text mb-3">Вы пользователь? <Link className="signIn-link" to='/'>Для пользователя</Link></p>
 
               <input className="signIn-input form-control mb-3" type="number" name="phone_number" placeholder="Phone" required/>
 
@@ -41,7 +41,7 @@ export const AdminLogin = () => {
                   return <Admin/>
                 } 
                 return <Private/>
-              }}>Next step</button>
+              }}>Входить</button>
             </form>
   );
 }
