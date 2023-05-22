@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Img from "../../../Images/62550852.jpg"
 import axios from "axios";
 import './addCategory.css'
@@ -11,9 +10,8 @@ export const AddCategory = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [charakter, setCharakter] = useState('');
-  const {adToken, setAdToken} = UseAdmin()
+  const {adToken} = UseAdmin()
   const [image, setImage] = useState(null);
-  const navigate = useNavigate();
 
   const handleNameChange = (event) => {
     setName(event.target.value);

@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Basket = () => {
-  const {token, setToken} = UseAuth()
+  const {token} = UseAuth()
   const id = useParams()
   const [basket, setBasket] = useState([]);
   const [modal, setModal] = useState(false);
@@ -65,7 +65,7 @@ export const Basket = () => {
     })
     .catch((error) => {
       if (error) {
-        toast.error('Ошибка !');
+        toast.warning('Зарегистрируйтесь, чтобы заказать !');
       }
     });
   };
