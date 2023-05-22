@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { UseAuth } from "../../Hooks/UseAuth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = () => {
   const { token, setToken } = UseAuth()
@@ -27,7 +29,11 @@ export const Login = () => {
         navigate('/');
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      if (error) {
+        toast.error('Номер телефона или пароль неверный !');
+      }
+    });
   };
 
   return (      
@@ -41,6 +47,7 @@ export const Login = () => {
               <input className="signIn-input form-control mb-3" type="password" name="password" placeholder="Password" required/>
 
               <button className="signIn-button btn btn-primary" type="submit">Входить</button>
+              <ToastContainer />
             </form>
   );
 }

@@ -2,6 +2,8 @@ import React, {useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HomeContext } from "../../context/homeContext";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import './register.css'
 
 export const Register = () => {
@@ -24,10 +26,15 @@ export const Register = () => {
     .then((data) => {
       if (data.data) {
         setToken(data.data);
+        toast.success('Вы вошли в систему !');
         navigate('/');
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      if (error) {
+        toast.error('Ошибка !');
+      }
+    });
 };
 
   return (
@@ -49,6 +56,7 @@ export const Register = () => {
               <input className="form-control mb-3" type="password" name="password" placeholder="Password" required/>
 
             <button className="btn btn-primary" type="submit" >Входить</button>
+            <ToastContainer />
           </form>
     </div>
   );

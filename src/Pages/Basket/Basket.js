@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import { UseAuth } from '../../Hooks/UseAuth';
 import { Modal } from '../../components/Modal/Modal';
 import { TrueModal } from '../../components/Modal/TrueModal'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Basket = () => {
@@ -25,6 +27,14 @@ export const Basket = () => {
     setQuantity(event.target.value);
     const priceNumber = parseInt(basket?.data?.category?.rental_price)
     setPrice(event.target.value * priceNumber);
+  };
+
+  const handleCreateEmployee = () => {
+    if (token) {
+      return setTrueModal(true)
+    }
+    return setModal(true)
+    
   };
 
 
@@ -53,7 +63,11 @@ export const Basket = () => {
     .then((data) => {
       console.log(data.data);
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      if (error) {
+        toast.error('Ошибка !');
+      }
+    });
   };
 
   return(
@@ -82,12 +96,8 @@ export const Basket = () => {
                 <input className='form-control w-50 mb-4' type="number" name="cost" placeholder='цена' id="price" defaultValue={price} onChange={handlePriceChange} readOnly />
             
             
-                <button type='submit' className='btn btn-primary' onClick={() => {
-                  if (token) {
-                    return setTrueModal(true)
-                  }
-                  return setModal(true)
-                }}>В АРЕНДУ</button>
+                <button type='submit' className='btn btn-primary' onClick={handleCreateEmployee}>В АРЕНДУ</button>
+                <ToastContainer />
 
               </form>
 

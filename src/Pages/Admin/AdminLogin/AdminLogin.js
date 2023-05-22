@@ -4,6 +4,8 @@ import axios from "axios"
 import { UseAdmin } from "../../../Hooks/UsAdmin";
 import { Private } from "../../../Private";
 import { Admin } from "../Admin";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AdminLogin = () => {
   const { adToken, setAdToken } = UseAdmin()
@@ -21,10 +23,15 @@ export const AdminLogin = () => {
     .then((data) => {
       if (data.data) {
         setAdToken(data.data);
+        toast.success('Вы вошли в систему !');
         navigate('/');
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      if (error) {
+        toast.error('Номер телефона или пароль неверный !');
+      }
+    });
   };
 
   return (      
@@ -42,6 +49,7 @@ export const AdminLogin = () => {
                 } 
                 return <Private/>
               }}>Входить</button>
+              <ToastContainer />
             </form>
   );
 }

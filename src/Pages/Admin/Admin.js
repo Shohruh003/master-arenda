@@ -22,6 +22,13 @@ export const Admin = () => {
                 <li>
                   <NavLink className={({isActive}) => (isActive ? 'header-active admin-link' : 'admin-link')} to='/order'>Заказы</NavLink>
                 </li>
+
+                <li>
+                  <NavLink className="admin-link" to="#" onClick={() => {
+                    localStorage.removeItem('token')
+                    window.location.reload();
+                  }}>Log out</NavLink> 
+                </li>
             </ul>
         </div>
       </div>
