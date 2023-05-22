@@ -32,15 +32,15 @@ export const Login = () => {
 
   return (      
           <form className="signIn-form" onSubmit={handleUserLogin}>
-            <h1 className="signIn-heading">Sign in</h1>
-            <p className="signIn-text mb-3">Do not you have an account? <NavLink className="signIn-link" to='register'>Sign up</NavLink></p>
-            <p className="signIn-text mb-3">Are you an admin? <NavLink className="signIn-link" to='adminLogin'>Sign in</NavLink></p>
+            <h1 className="signIn-heading">Войти</h1>
+            <p className="signIn-text mb-3">У вас нет аккаунта? <NavLink className="signIn-link" to='register'>Регистр</NavLink></p>
+            <p className="signIn-text mb-3">Вы администратор? <NavLink className="signIn-link" to='adminLogin'>Войти</NavLink></p>
 
               <input className="signIn-input form-control mb-3" type="number" name="phone_number" placeholder="Phone" required/>
 
               <input className="signIn-input form-control mb-3" type="password" name="password" placeholder="Password" required/>
 
-              <button className="signIn-button btn btn-primary" type="submit">Next step</button>
+              <button className="signIn-button btn btn-primary" type="submit">Входить</button>
             </form>
   );
 }

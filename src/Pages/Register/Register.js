@@ -32,8 +32,8 @@ export const Register = () => {
 
   return (
     <div>
-      <h2 className="register-heading">Sign up</h2>
-        <p className="register-text mb-3">Already have an account? <Link className="register-link" to='/'>Sign in</Link></p>
+      <h2 className="register-heading">Регистр</h2>
+        <p className="register-text mb-3">Уже есть аккаунт? <Link className="register-link" to='/'>Войти</Link></p>
           <form className="register-form" onSubmit={handleUserRegister}>
 
             
@@ -48,7 +48,7 @@ export const Register = () => {
             
               <input className="form-control mb-3" type="password" name="password" placeholder="Password" required/>
 
-            <button className="btn btn-primary" type="submit" >Next step</button>
+            <button className="btn btn-primary" type="submit" >Входить</button>
           </form>
     </div>
   );
