@@ -28,7 +28,6 @@ export const Orders = () => {
   return(
     <div className="orders">
         <div className="orders-inner">
-          <h2>Orders</h2>
           <Table  bordered hover>
                 <thead >
                   <tr>

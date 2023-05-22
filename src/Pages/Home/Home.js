@@ -29,7 +29,7 @@ export const Home = () => {
     .catch(function (error) {
       console.log(error);
     });  
-  }, [card])
+  }, [])
 
   return(
       <div className="home">

@@ -4,8 +4,6 @@ import CardImg from '../../Images/52216253.jpg'
 import './card.css'
 
 export const Card = ({id, name, price, character, image}) => {
-
-
   return(
     <li className='cardItem'>
       <img src={`https://pro.zirapcha.uz/api/api/file/${image}`} 

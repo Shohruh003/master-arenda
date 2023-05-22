@@ -43,7 +43,11 @@ export const Header = () => {
           </button>
 
           <dialog open={btn} className="header-navigate">
-            <Link className="navSet set" to="">{token?.data?.user?.name}</Link>       
+            <Link className="navSet set" to="">{token?.data?.user?.name}</Link> 
+            <Link className="navSet set" to="#" onClick={() => {
+              localStorage.removeItem('token')
+              window.location.reload();
+            }}>Log out</Link>       
           </dialog>
         </div>
       </div>

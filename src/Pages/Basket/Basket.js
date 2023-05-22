@@ -12,14 +12,26 @@ export const Basket = () => {
   const {token, setToken} = UseAuth()
   const id = useParams()
   const [basket, setBasket] = useState([]);
-
   const [modal, setModal] = useState(false);
   const [trueModal, setTrueModal] = useState(false);
+  const [quantity, setQuantity] = useState();
+  const [price, setPrice] = useState();
+
+  const handlePriceChange = (event) => {
+    setPrice(event.target.value);
+  };
+
+  const handleQuantityChange = (event) => {
+    setQuantity(event.target.value);
+    const priceNumber = parseInt(basket?.data?.category?.rental_price)
+    setPrice(event.target.value * priceNumber);
+  };
+
 
   useEffect(() => {
     axios.get(`https://pro.zirapcha.uz/api/category/${id.id}`,{
         headers:{
-            Authorization:token.token,
+            Authorization:token?.data?.token,
         }
     })
     .then(function (response) {
@@ -39,9 +51,7 @@ export const Basket = () => {
       }
     })
     .then((data) => {
-      if (data.data) {
-        setToken(data.data);
-      }
+      console.log(data.data);
     })
     .catch((error) => console.log(error));
   };
@@ -50,7 +60,7 @@ export const Basket = () => {
     <div className="basket">
       <div className="containers">
         <div className="basket-inner">
-          <img src={CardImg} 
+          <img src={`https://pro.zirapcha.uz/api/api/file/${basket?.data?.category?.images}`} 
             onError={({ currentTarget }) => {
             currentTarget.onerror = null;
             currentTarget.src ={CardImg}
@@ -62,14 +72,14 @@ export const Basket = () => {
             <p>Технические характеристики: <span>{basket?.data?.category?.technical_characteristics ? basket?.data?.category?.technical_characteristics : "Пустой"}</span></p> 
 
               <form className='form-group' onSubmit={handleRent}>
-                <input className='form-control w-50 mb-4' name="category" defaultValue={id.id} />
+                <input className='form-control w-50 mb-4 d-none' name="category" defaultValue={id.id} />
 
                 <label className='mb-1' htmlFor="quantity">Количество</label>
-                <input className='form-control w-50 mb-4' type="number" name="number" placeholder='количество' id="quantity" defaultValue={1} min={1}/>
+                <input className='form-control w-50 mb-4' type="number" name="number" placeholder='количество' id="quantity" defaultValue={quantity} onChange={handleQuantityChange} min={1} />
             
             
                 <label className='mb-1' htmlFor="price">Цена</label>
-                <input className='form-control w-50 mb-4' type="number" name="cost" placeholder='цена' id="price" />
+                <input className='form-control w-50 mb-4' type="number" name="cost" placeholder='цена' id="price" defaultValue={price} onChange={handlePriceChange} readOnly />
             
             
                 <button type='submit' className='btn btn-primary' onClick={() => {

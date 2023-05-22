@@ -30,10 +30,6 @@ export const Catalog = () => {
                 <Card key={e?.name} item={e?.name}  price={e?.rental_price} character={e?.technical_characteristics} image={e?.images}/>
               ))
 }   
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
           </ul>
         </div>
       </div>
